@@ -1,4 +1,4 @@
-package br.com.danielwisky.cleanarch.gateways.inputs.gateways.inputs.http.resources;
+package br.com.danielwisky.cleanarch.gateways.inputs.http.resources;
 
 import br.com.danielwisky.cleanarch.domains.Book;
 import lombok.Data;

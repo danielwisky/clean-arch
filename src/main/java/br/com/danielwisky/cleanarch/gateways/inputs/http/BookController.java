@@ -1,11 +1,12 @@
-package br.com.danielwisky.cleanarch.gateways.inputs.gateways.inputs.http;
+package br.com.danielwisky.cleanarch.gateways.inputs.http;
 
 import static org.springframework.http.HttpStatus.OK;
 
 import br.com.danielwisky.cleanarch.domains.Book;
-import br.com.danielwisky.cleanarch.gateways.inputs.gateways.inputs.http.resources.CreateBookRequest;
-import br.com.danielwisky.cleanarch.gateways.inputs.gateways.inputs.http.resources.CreateBookResponse;
+import br.com.danielwisky.cleanarch.gateways.inputs.http.resources.CreateBookRequest;
+import br.com.danielwisky.cleanarch.gateways.inputs.http.resources.CreateBookResponse;
 import br.com.danielwisky.cleanarch.usecases.CreateBookUsecase;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class BookController {
   
   @PostMapping
   @ResponseStatus(OK)
+  @ApiOperation(value = "Create book")
   public ResponseEntity<CreateBookResponse> create(
       @RequestBody final CreateBookRequest createBookRequest) {
     

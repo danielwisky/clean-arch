@@ -1,9 +1,9 @@
-package br.com.danielwisky.cleanarch.gateways.outputs.mysql;
+package br.com.danielwisky.cleanarch.gateways.outputs.mongodb;
 
 import br.com.danielwisky.cleanarch.domains.Book;
 import br.com.danielwisky.cleanarch.gateways.BookDataGateway;
-import br.com.danielwisky.cleanarch.gateways.outputs.mysql.entities.BookEntity;
-import br.com.danielwisky.cleanarch.gateways.outputs.mysql.repositories.BookRepository;
+import br.com.danielwisky.cleanarch.gateways.outputs.mongodb.documents.BookDocument;
+import br.com.danielwisky.cleanarch.gateways.outputs.mongodb.repositories.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +15,8 @@ public class BookMySQLGatewayImpl implements BookDataGateway {
 
   @Override
   public Book save(final Book book) {
-    final BookEntity bookEntity = new BookEntity(book);
-    final BookEntity savedBook = bookRepository.save(bookEntity);
+    final BookDocument bookDocument = new BookDocument(book);
+    final BookDocument savedBook = bookRepository.save(bookDocument);
     return savedBook.toDomain();
   }
 }
