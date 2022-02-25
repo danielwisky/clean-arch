@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/books")
 public class BookController {
-  
+
   private final CreateBookUsecase createBookUsecase;
-  
+
   @PostMapping
   @ResponseStatus(OK)
   @ApiOperation(value = "Create book")
   public ResponseEntity<CreateBookResponse> create(
       @RequestBody final CreateBookRequest createBookRequest) {
-    
+
     final Book book = createBookRequest.toDomain();
     final Book bookCreated = createBookUsecase.execute(book);
 

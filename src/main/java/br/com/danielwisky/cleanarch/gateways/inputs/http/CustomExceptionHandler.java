@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class CustomExceptionHandler {
 
   @ExceptionHandler(IllegalArgumentException.class)
-  public HttpEntity<ErrorResponse> handlerIllegalArgumentException(final IllegalArgumentException ex) {
+  public HttpEntity<ErrorResponse> handlerIllegalArgumentException(
+      final IllegalArgumentException ex) {
     return new ResponseEntity<>(createMessage(ex), createHeaders(), HttpStatus.BAD_REQUEST);
   }
 
