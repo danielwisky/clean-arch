@@ -12,6 +12,7 @@ A **Clean Architecture** (Arquitetura limpa) foi criada por Robert C. Martin (Un
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Maven](https://maven.apache.org/)
 * [MongoDB](https://www.mongodb.com/)
+* [Kafka](https://kafka.apache.org/)
 
 ## Referências:
 
