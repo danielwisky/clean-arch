@@ -4,7 +4,9 @@ Projeto criado para o treinamento de arquitetura limpa (clean arch, clean archit
 
 ## O que é o Clean Architecture?
 
-A **Clean Architecture** (Arquitetura limpa) foi criada por Robert C. Martin (Uncle Bob) e promovida em seu livro Clean Architecture: A Craftsman’s Guide to Software Structure. (Arquitetura Limpa: O guia do artesão para estrutura e design de software).
+A **Clean Architecture** (*Arquitetura limpa*) foi criada por Robert C. Martin (*Uncle Bob*) e promovida em seu livro Clean Architecture: A Craftsman’s Guide to Software Structure. (*Arquitetura Limpa: O guia do artesão para estrutura e design de software*).
+
+![Clean-Architecture-3](https://user-images.githubusercontent.com/2626931/155764857-df7e36e7-4a76-41bb-bea6-a55be043f782.png)
 
 ## Tecnologias que iremos utilizar:
 
