@@ -21,8 +21,8 @@ public class CreateBookListener {
   @KafkaListener(topics = "clean-arch.create-book.request")
   public void receiver(final String message) {
     try {
-      final CreateBookJson covid19Resource = convertMessage(message);
-      final Book book = covid19Resource.toDomain();
+      final CreateBookJson createBookJson = convertMessage(message);
+      final Book book = createBookJson.toDomain();
 
       createBookUsecase.execute(book);
 
