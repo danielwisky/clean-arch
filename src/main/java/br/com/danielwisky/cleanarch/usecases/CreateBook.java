@@ -9,7 +9,7 @@ import org.springframework.util.Assert;
 
 @Component
 @RequiredArgsConstructor
-public class CreateBookUsecase {
+public class CreateBook {
 
   private final BookDataGateway bookDataGateway;
   private final BookExternalGateway bookExternalGateway;

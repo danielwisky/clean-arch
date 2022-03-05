@@ -2,7 +2,7 @@ package br.com.danielwisky.cleanarch.gateways.inputs.kafka;
 
 import br.com.danielwisky.cleanarch.domains.Book;
 import br.com.danielwisky.cleanarch.gateways.inputs.kafka.resources.CreateBookJson;
-import br.com.danielwisky.cleanarch.usecases.CreateBookUsecase;
+import br.com.danielwisky.cleanarch.usecases.CreateBook;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ public class CreateBookListener {
 
   private final ObjectMapper objectMapper;
 
-  private final CreateBookUsecase createBookUsecase;
+  private final CreateBook createBook;
 
   @KafkaListener(topics = "clean-arch.create-book.request")
   public void receiver(final String message) {
@@ -24,7 +24,7 @@ public class CreateBookListener {
       final CreateBookJson createBookJson = convertMessage(message);
       final Book book = createBookJson.toDomain();
 
-      createBookUsecase.execute(book);
+      createBook.execute(book);
 
     } catch (Exception e) {
       log.error("Error creating a book.", e);

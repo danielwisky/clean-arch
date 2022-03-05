@@ -5,7 +5,7 @@ import static org.springframework.http.HttpStatus.OK;
 import br.com.danielwisky.cleanarch.domains.Book;
 import br.com.danielwisky.cleanarch.gateways.inputs.http.resources.CreateBookRequest;
 import br.com.danielwisky.cleanarch.gateways.inputs.http.resources.CreateBookResponse;
-import br.com.danielwisky.cleanarch.usecases.CreateBookUsecase;
+import br.com.danielwisky.cleanarch.usecases.CreateBook;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping("/api/v1/books")
 public class BookController {
 
-  private final CreateBookUsecase createBookUsecase;
+  private final CreateBook createBook;
 
   @PostMapping
   @ResponseStatus(OK)
@@ -29,7 +29,7 @@ public class BookController {
       @RequestBody final CreateBookRequest createBookRequest) {
 
     final Book book = createBookRequest.toDomain();
-    final Book bookCreated = createBookUsecase.execute(book);
+    final Book bookCreated = createBook.execute(book);
 
     return ResponseEntity.ok(new CreateBookResponse(bookCreated));
   }
