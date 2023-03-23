@@ -6,16 +6,15 @@ import br.com.danielwisky.cleanarch.domains.Book;
 import br.com.danielwisky.cleanarch.gateways.inputs.http.resources.CreateBookRequest;
 import br.com.danielwisky.cleanarch.gateways.inputs.http.resources.CreateBookResponse;
 import br.com.danielwisky.cleanarch.usecases.CreateBook;
-import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/books")
 public class BookController {
@@ -24,7 +23,6 @@ public class BookController {
 
   @PostMapping
   @ResponseStatus(OK)
-  @ApiOperation(value = "Create book")
   public ResponseEntity<CreateBookResponse> create(
       @RequestBody final CreateBookRequest createBookRequest) {
 

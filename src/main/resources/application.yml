@@ -22,6 +22,8 @@ spring:
       bootstrap-servers: ${spring.kafka.bootstrap-servers}
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.idempotence: false
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
